@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../styles/colors';
+import Colors from '../../layouts/colors';
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: colors.background,
+      backgroundColor: Colors.background,
     },
   });
 

@@ -8,6 +8,8 @@ import styles from './showsList.styles';
 const ShowsList = () => {
   const [shows, setShows] = useState<IShow[]>([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const {container} = styles;
 
   useEffect(() => {
     getShows();
@@ -15,19 +17,22 @@ const ShowsList = () => {
 
   const getShows = () => {
     getMostPopularShows(pageNumber)
-      .then((response) => setShows([...shows, ...response]))
+      .then((response) => {
+        setTotalPages(response.pages);
+        setShows([...shows, ...response.shows]);
+      })
       .catch((error) => console.log(error));
 
-    setPageNumber(pageNumber + 1);
+    if (pageNumber < totalPages) setPageNumber(pageNumber + 1);
   };
 
   return (
     <FlatList
       data={shows}
-      numColumns={2}
-      contentContainerStyle={styles.container}
+      contentContainerStyle={container}
       renderItem={({item}) => <Show key={item.id} show={item} />}
-      keyExtractor={(item: IShow) => item.name}
+      keyExtractor={(item: IShow, index) => index.toString()}
+      numColumns={2}
       onEndReached={getShows}
       onEndReachedThreshold={0.4}
     />

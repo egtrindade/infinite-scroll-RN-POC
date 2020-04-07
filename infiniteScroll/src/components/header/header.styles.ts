@@ -1,11 +1,11 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../styles/colors';
+import Colors from '../../layouts/colors';
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: colors.primaryDark,
+  headerStyle: {
+    backgroundColor: Colors.primaryDark,
   },
-  title: {
+  titleStyle: {
     fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
