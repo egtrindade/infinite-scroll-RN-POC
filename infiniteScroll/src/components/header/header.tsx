@@ -8,10 +8,11 @@ interface Props {
 
 const Header = (props: Props) => {
   const {title} = props;
+  const {headerStyle, titleStyle} = styles;
 
   return (
-    <View style={styles.header}>
-      <Text style={styles.title}>{title}</Text>
+    <View style={headerStyle}>
+      <Text style={titleStyle}>{title}</Text>
     </View>
   );
 };

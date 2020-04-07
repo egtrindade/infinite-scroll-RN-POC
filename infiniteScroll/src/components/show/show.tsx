@@ -9,15 +9,16 @@ interface Props {
 
 const Show = (props: Props) => {
   const {name, image_thumbnail_path} = props.show;
+  const {container, image, subtitle} = styles;
 
   return (
-    <View style={styles.container}>
+    <View style={container}>
       <Image
-        style={styles.image}
+        style={image}
         resizeMode="contain"
         source={{uri: image_thumbnail_path}}
       />
-      <Text style={styles.subtitle}>{name}</Text>
+      <Text style={subtitle}>{name}</Text>
     </View>
   );
 };

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import colors from '../../styles/colors';
+import Colors from '../../layouts/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: colors.primary,
+    color: Colors.primary,
     textAlign: 'center',
   },
   image: {
